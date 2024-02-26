@@ -1,0 +1,46 @@
+﻿@model esercizio.Views.Payments.IndexModel
+@{
+    ViewData["Title"] = "Archivio Pagamenti";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Periodo di pagamento</th>
+            <th scope="col">Importo</th>
+            <th scope="col">Tipo</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr class="ClickableRow" onclick="location.href = '@(Url.Action("New", "Payment", new { id = 2 }))'">
+            <th scope="row">1</th>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+.FormContainer {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.form-check {
+    padding-left: 0;
+}
+
+
+.ClickableRow {
+    cursor: pointer;
+}
