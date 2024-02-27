@@ -3,7 +3,7 @@
 
 }
 <div class="text-center">
-    <a class="btn btn-primary" asp-controller="Home" asp-action="New">New Employee</a>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Add">New Employee</a>
 
 </div>
 
@@ -18,42 +18,28 @@
             <th scope="col">Sposato?</th>
             <th scope="col">Figli</th>
             <th scope="col">Mansione</th>
+            <th scope="col">Pagah</th>
+
 
         </tr>
     </thead>
     <tbody>
+        @foreach (Employee emp in ViewBag.employees)
+        {
 
-        <tr>
-            <th scope="row">1</th>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
+            <tr class="ClickableRow" onclick="location.href = '@(Url.Action("Details", "Home", new { id = emp.id }))'">
+                <th>@emp.id</th>
+                <td>@emp.name</td>
+                <td>@emp.surname</td>
+                <td>@emp.address</td>
+                <td>@emp.cf</td>
+                <td>@emp.married.ToString()</td>
+                <td>@emp.children</td>
+                <td>@emp.role.ToString()</td>
+                <td><a class="btn btn-danger" href="Home/NewPayment/@emp.id">Pagah</a></td>
+            </tr>
+        }
 
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-        </tr>
     </tbody>
 </table>
 

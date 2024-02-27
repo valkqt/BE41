@@ -1,3 +1,5 @@
+using esercizio.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -28,6 +30,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "payment",
     pattern: "{controller=Payments}/{action=Index}/{id?}");
+Db.Init();
 
 
 app.Run();

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Nuovo Pagamento";
+    int local = ViewBag.id;
+
+    var emp = Db.employees.Find(elem => elem.id == local);
+
+}
+
+<div>
+    <div class="card FormContainer">
+        <div class="card-body">
+            <h5 class="card-title">Nuovo pagamento</h5>
+            <form asp-controller="Home" asp-action="NewPayment" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nominativo:</label>
+                    <input type="text" class="form-control" id="name" name="name" disabled value="@emp.name @emp.surname"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="startdate" class="form-label">Periodo del pagamento:</label>
+                    <input type="date" class="form-control" id="startdate" name="startdate" required />
+                    <input type="date" class="form-control" id="enddate" name="enddate" required />
+                </div>
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Importo:</label>
+                    <input type="number" step="0.01" class="form-control" name="amount" id="amount" value="@local">
+                </div>
+                <div class="mb-3 form-check">
+                    <label for="type" class="form-label">Tipo di pagamento:</label>
+                    <select class="form-select" id="type" name="type">
+                        <option selected>Scegli un'opzione'</option>
+                        <option value="1" selected>Stipendio</option>
+                        <option value="2">Acconto</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

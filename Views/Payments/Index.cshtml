@@ -7,9 +7,8 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Cognome</th>
-            <th scope="col">Periodo di pagamento</th>
+            <th scope="col">Employee</th>
+            <th scope="col">Intervallo</th>
             <th scope="col">Importo</th>
             <th scope="col">Tipo</th>
 
@@ -17,30 +16,16 @@
     </thead>
     <tbody>
 
-        <tr class="ClickableRow" onclick="location.href = '@(Url.Action("New", "Payments", new { id = 2 }))'">
-            <th scope="row">1</th>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
+        @foreach (Payment pay in ViewBag.payments)
+        {
+            <tr>
+                <th scope="row">@pay.id</th>
+                <td>@pay.reference.name @pay.reference.surname</td>
+                <td>@pay.PaymentInterval[0] - @pay.PaymentInterval[1]</td>
+                <td>@pay.amount</td>
+                <td>@pay.type</td>
+            </tr>
 
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-            <td>X</td>
-        </tr>
+        }
     </tbody>
 </table>

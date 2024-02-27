@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace esercizio.Views.Payments
+namespace esercizio.Views.Home
 {
     public class Index1Model : PageModel
     {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using esercizio.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace esercizio.Controllers
 {
@@ -6,15 +7,11 @@ namespace esercizio.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.payments = Db.payments;
+
             return View();
         }
 
 
-        public IActionResult New(int? id)
-        {
-            ViewBag.id = id;
-            return View();
-
-        }
     }
 }

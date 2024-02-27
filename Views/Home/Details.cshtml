@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Employee emp = Db.employees.Find(elem => elem.id == ViewBag.id);
+}
+
+<div class="card ImpiegatoDetails">
+    <div class="card-header">
+        Impiegato @emp.name @emp.surname
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item disabled">ID: @emp.id</li>
+        <li class="list-group-item">Indirizzo: @emp.address</li>
+        <li class="list-group-item">Codice Fiscale: @emp.cf</li>
+        <li class="list-group-item">Sposato: @emp.married</li>
+        <li class="list-group-item">Figli: @emp.children</li>
+        <li class="list-group-item">Ruolo: @emp.role</li>
+    </ul>
+    <hr />
+    <div>
+    <h5 class="ms-3">Pagamenti:</h5>
+    <table class="table DetailsTable">
+        <thead>
+            <tr>
+                <th scope="col">Intervallo</th>
+                <th scope="col">Importo</th>
+                <th scope="col">Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Payment pay in emp.payments)
+            {
+                <tr>
+                    <td>@pay.PaymentInterval[0] - @pay.PaymentInterval[1]</td>
+                    <td>@pay.amount</td>
+                    <td>@pay.type</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    </div>
+</div>
+

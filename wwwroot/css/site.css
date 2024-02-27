@@ -11,3 +11,11 @@
 .ClickableRow {
     cursor: pointer;
 }
+
+.ImpiegatoDetails {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.DetailsTable {
+}
