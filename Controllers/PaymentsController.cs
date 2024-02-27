@@ -12,8 +12,8 @@ namespace esercizio.Controllers
 
         public IActionResult New(int? id)
         {
-
-            return View(id);
+            ViewBag.id = id;
+            return View();
 
         }
     }
