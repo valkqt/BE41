@@ -22,6 +22,19 @@ namespace esercizio.Controllers
             ViewBag.employees = Db.employees;
             return View();
         }
+
+        public IActionResult Delete(int id)
+        {
+            int empIndex = Db.employees.FindIndex(elem => elem.id == id);
+            Db.employees.RemoveAt(empIndex);
+            return RedirectToAction("Index", "Home");
+        }
+
+        //public IActionResult Delete(int? id)
+        //{
+        //    return RedirectToAction("Index");
+        //}
+
         public IActionResult Add()
         {
             return View();

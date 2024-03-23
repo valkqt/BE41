@@ -37,6 +37,7 @@
                 <td>@emp.children</td>
                 <td>@emp.role.ToString()</td>
                 <td><a class="btn btn-danger" href="Home/NewPayment/@emp.id">Pagah</a></td>
+                <td><a asp-action="Delete" asp-controller="Home" asp-route-id="@emp.id" class="btn btn-danger">Cancellah</a></td>
             </tr>
         }
 
